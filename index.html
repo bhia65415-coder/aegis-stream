@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aegis Stream — Unified Task-Communication Platform</title>
+  <meta name="description" content="Aegis Stream integrates video meetings, task management, AI intelligence, and security tagging into a single pane of glass." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/aegis-stream/assets/index-BNHw4hBn.js"></script>
+  <link rel="stylesheet" crossorigin href="/aegis-stream/assets/index-DW2OCYbQ.css">
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <nav id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M20 4L36 12V28L20 36L4 28V12L20 4Z" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
+          <path d="M20 12L28 16V24L20 28L12 24V16L20 12Z" fill="url(#logoGrad)" opacity="0.6"/>
+          <defs><linearGradient id="logoGrad" x1="4" y1="4" x2="36" y2="36"><stop stop-color="#06d6a0"/><stop offset="1" stop-color="#7209b7"/></linearGradient></defs>
+        </svg>
+      </div>
+      <span class="logo-text">Aegis Stream</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#dashboard" class="nav-link active" data-view="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <span>Dashboard</span>
+      </a></li>
+      <li><a href="#meeting" class="nav-link" data-view="meeting">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <span>Meeting</span>
+      </a></li>
+      <li><a href="#tasks" class="nav-link" data-view="tasks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span>Tasks</span>
+      </a></li>
+      <li><a href="#pulse" class="nav-link" data-view="pulse">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <span>AI Pulse</span>
+      </a></li>
+      <li><a href="#settings" class="nav-link" data-view="settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        <span>Settings</span>
+      </a></li>
+    </ul>
+    <div class="sidebar-bottom">
+      <div class="user-badge tag-blue">
+        <div class="avatar-ring blue">
+          <div class="avatar-placeholder">AB</div>
+        </div>
+        <div class="user-info">
+          <span class="user-name">Abhishek</span>
+          <span class="user-role">Core Team</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main id="main-content">
+
+    <!-- ===== DASHBOARD VIEW ===== -->
+    <section id="view-dashboard" class="view active">
+      <div class="view-header">
+        <h1>Command Center</h1>
+        <p class="subtitle">Your unified workspace at a glance</p>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="stats-row">
+        <div class="stat-card glass-panel">
+          <div class="stat-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div class="stat-data"><span class="stat-value" data-count="47">0</span><span class="stat-label">Tasks Completed</span></div>
+        </div>
+        <div class="stat-card glass-panel">
+          <div class="stat-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+          <div class="stat-data"><span class="stat-value" data-count="12">0</span><span class="stat-label">Meetings This Week</span></div>
+        </div>
+        <div class="stat-card glass-panel">
+          <div class="stat-icon cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="stat-data"><span class="stat-value" data-count="8">0</span><span class="stat-label">Active Members</span></div>
+        </div>
+        <div class="stat-card glass-panel">
+          <div class="stat-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="stat-data"><span class="stat-value" data-count="23">0</span><span class="stat-label">AI Highlights</span></div>
+        </div>
+      </div>
+
+      <!-- Workflow Loop -->
+      <div class="section-title"><h2>Workflow Loop</h2></div>
+      <div class="workflow-loop glass-panel">
+        <div class="wf-step active" id="wf-initiate">
+          <div class="wf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></div>
+          <span>Initiate</span>
+          <p class="wf-desc">Start an Aegis Meet</p>
+        </div>
+        <div class="wf-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div class="wf-step" id="wf-tag">
+          <div class="wf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+          <span>Tag</span>
+          <p class="wf-desc">Partners join with Amber Tags</p>
+        </div>
+        <div class="wf-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div class="wf-step" id="wf-execute">
+          <div class="wf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <span>Execute</span>
+          <p class="wf-desc">AI captures & converts to tasks</p>
+        </div>
+        <div class="wf-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div class="wf-step" id="wf-review">
+          <div class="wf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <span>Review</span>
+          <p class="wf-desc">Dashboard updates with highlights</p>
+        </div>
+      </div>
+
+      <!-- Feature Cards -->
+      <div class="section-title"><h2>Platform Features</h2></div>
+      <div class="feature-grid">
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrap gradient-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <h3>Interactive Co-op</h3>
+          <p>Multiple users annotate and move elements on a shared screen simultaneously.</p>
+        </div>
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrap gradient-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>End-to-End Encryption</h3>
+          <p>Tasks discussed in meetings are encrypted and only accessible to participants with the correct Tag.</p>
+        </div>
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrap gradient-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+          <h3>Voice Isolation</h3>
+          <p>Separates multiple voices so the AI can attribute notes to the correct person.</p>
+        </div>
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrap gradient-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <h3>Contextual Recall</h3>
+          <p>AI whispers reminders from past meetings: "You agreed to finish the API docs by today."</p>
+        </div>
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrap gradient-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <h3>Zero-Latency Sync</h3>
+          <p>Task updates pushed across the cloud in milliseconds preventing double-work or stale data.</p>
+        </div>
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrap gradient-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+          <h3>Cross-Platform</h3>
+          <p>Security tags and AI notes remain consistent whether on mobile or high-end workstation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MEETING VIEW ===== -->
+    <section id="view-meeting" class="view">
+      <div class="view-header">
+        <h1>Aegis Meet</h1>
+        <div class="meeting-controls">
+          <span class="live-badge"><span class="live-dot"></span> LIVE</span>
+          <span class="meeting-timer">00:00:00</span>
+          <button class="btn btn-outline" id="btn-toggle-tasks">📋 Task Overlay</button>
+          <button class="btn btn-danger" id="btn-end-call">End Call</button>
+        </div>
+      </div>
+
+      <div class="meeting-layout">
+        <!-- Video Grid -->
+        <div class="video-grid">
+          <div class="video-tile active-speaker">
+            <div class="video-placeholder gradient-mesh-1">
+              <div class="avatar-ring blue large"><div class="avatar-placeholder">AB</div></div>
+            </div>
+            <div class="tile-bar"><span class="tile-name">Abhishek</span><span class="tag-badge tag-blue-sm">CORE</span></div>
+            <div class="speaking-indicator"><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="video-tile">
+            <div class="video-placeholder gradient-mesh-2">
+              <div class="avatar-ring blue large"><div class="avatar-placeholder">SK</div></div>
+            </div>
+            <div class="tile-bar"><span class="tile-name">Sarah K.</span><span class="tag-badge tag-blue-sm">CORE</span></div>
+          </div>
+          <div class="video-tile">
+            <div class="video-placeholder gradient-mesh-3">
+              <div class="avatar-ring amber large"><div class="avatar-placeholder">MR</div></div>
+            </div>
+            <div class="tile-bar"><span class="tile-name">Mike R.</span><span class="tag-badge tag-amber-sm">GUEST</span></div>
+          </div>
+          <div class="video-tile">
+            <div class="video-placeholder gradient-mesh-4">
+              <div class="avatar-ring blue large"><div class="avatar-placeholder">PL</div></div>
+            </div>
+            <div class="tile-bar"><span class="tile-name">Priya L.</span><span class="tag-badge tag-blue-sm">CORE</span></div>
+          </div>
+          <div class="video-tile">
+            <div class="video-placeholder gradient-mesh-5">
+              <div class="avatar-ring amber large"><div class="avatar-placeholder">JD</div></div>
+            </div>
+            <div class="tile-bar"><span class="tile-name">James D.</span><span class="tag-badge tag-amber-sm">GUEST</span></div>
+          </div>
+          <div class="video-tile">
+            <div class="video-placeholder gradient-mesh-6">
+              <div class="avatar-ring blue large"><div class="avatar-placeholder">RN</div></div>
+            </div>
+            <div class="tile-bar"><span class="tile-name">Riya N.</span><span class="tag-badge tag-blue-sm">CORE</span></div>
+          </div>
+        </div>
+
+        <!-- Task Overlay -->
+        <div class="task-overlay glass-panel" id="task-overlay">
+          <div class="overlay-header">
+            <h3>🗂 Task Board</h3>
+            <button class="btn-icon" id="btn-close-overlay">✕</button>
+          </div>
+          <div class="kanban-mini">
+            <div class="kanban-col">
+              <div class="kanban-col-header todo">To Do</div>
+              <div class="kanban-card">Fix login timeout issue<span class="kanban-assignee tag-blue-sm">AB</span></div>
+              <div class="kanban-card">Update security headers<span class="kanban-assignee tag-blue-sm">SK</span></div>
+            </div>
+            <div class="kanban-col">
+              <div class="kanban-col-header progress">In Progress</div>
+              <div class="kanban-card">API documentation<span class="kanban-assignee tag-blue-sm">PL</span></div>
+              <div class="kanban-card">Client onboarding flow<span class="kanban-assignee tag-amber-sm">MR</span></div>
+            </div>
+            <div class="kanban-col">
+              <div class="kanban-col-header done">Done</div>
+              <div class="kanban-card completed">Database migration<span class="kanban-assignee tag-blue-sm">RN</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Whisper Bar -->
+      <div class="ai-whisper-bar glass-panel" id="ai-whisper">
+        <div class="whisper-icon">🤖</div>
+        <div class="whisper-text">
+          <span class="whisper-label">AI Whisper:</span>
+          <span class="whisper-content" id="whisper-content">Last meeting, Abhishek agreed to finish the API documentation by today.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TASKS VIEW ===== -->
+    <section id="view-tasks" class="view">
+      <div class="view-header">
+        <h1>Task Board</h1>
+        <button class="btn btn-primary" id="btn-add-task">+ New Task</button>
+      </div>
+      <div class="kanban-board">
+        <div class="kanban-column" data-status="todo">
+          <div class="column-header"><span class="col-dot todo"></span><h3>To Do</h3><span class="col-count">3</span></div>
+          <div class="column-cards" id="col-todo">
+            <div class="task-card glass-panel" draggable="true" data-id="t1">
+              <div class="task-priority high"></div>
+              <h4>Fix login timeout issue</h4>
+              <p>Users report session drops after 15 min idle.</p>
+              <div class="task-meta"><span class="tag-badge tag-blue-sm">Abhishek</span><span class="task-due">Due: May 5</span></div>
+            </div>
+            <div class="task-card glass-panel" draggable="true" data-id="t2">
+              <div class="task-priority medium"></div>
+              <h4>Update security headers</h4>
+              <p>Add HSTS and CSP headers to all endpoints.</p>
+              <div class="task-meta"><span class="tag-badge tag-blue-sm">Sarah K.</span><span class="task-due">Due: May 7</span></div>
+            </div>
+            <div class="task-card glass-panel" draggable="true" data-id="t3">
+              <div class="task-priority low"></div>
+              <h4>Design onboarding screens</h4>
+              <p>Create wireframes for the new user onboarding.</p>
+              <div class="task-meta"><span class="tag-badge tag-amber-sm">Mike R.</span><span class="task-due">Due: May 10</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="kanban-column" data-status="progress">
+          <div class="column-header"><span class="col-dot progress"></span><h3>In Progress</h3><span class="col-count">2</span></div>
+          <div class="column-cards" id="col-progress">
+            <div class="task-card glass-panel" draggable="true" data-id="t4">
+              <div class="task-priority high"></div>
+              <h4>API documentation</h4>
+              <p>Complete REST API docs for v2 endpoints.</p>
+              <div class="task-meta"><span class="tag-badge tag-blue-sm">Priya L.</span><span class="task-due">Due: May 3</span></div>
+            </div>
+            <div class="task-card glass-panel" draggable="true" data-id="t5">
+              <div class="task-priority medium"></div>
+              <h4>Client onboarding flow</h4>
+              <p>Build the invite & permissions workflow.</p>
+              <div class="task-meta"><span class="tag-badge tag-amber-sm">James D.</span><span class="task-due">Due: May 8</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="kanban-column" data-status="done">
+          <div class="column-header"><span class="col-dot done"></span><h3>Done</h3><span class="col-count">2</span></div>
+          <div class="column-cards" id="col-done">
+            <div class="task-card glass-panel completed" draggable="true" data-id="t6">
+              <div class="task-priority high"></div>
+              <h4>Database migration</h4>
+              <p>Migrate from MySQL to PostgreSQL.</p>
+              <div class="task-meta"><span class="tag-badge tag-blue-sm">Riya N.</span><span class="task-due">Completed</span></div>
+            </div>
+            <div class="task-card glass-panel completed" draggable="true" data-id="t7">
+              <div class="task-priority medium"></div>
+              <h4>SSL certificate renewal</h4>
+              <p>Renew wildcard cert for all subdomains.</p>
+              <div class="task-meta"><span class="tag-badge tag-blue-sm">Abhishek</span><span class="task-due">Completed</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AI PULSE VIEW ===== -->
+    <section id="view-pulse" class="view">
+      <div class="view-header">
+        <h1>AI Pulse Intelligence</h1>
+        <p class="subtitle">Your digital secretary — context-aware meeting intelligence</p>
+      </div>
+
+      <div class="pulse-layout">
+        <!-- Live Scriber -->
+        <div class="pulse-scriber glass-panel">
+          <div class="scriber-header"><span class="live-dot"></span> Live Meeting Scribe</div>
+          <div class="scriber-feed" id="scriber-feed">
+            <div class="scribe-entry chit-chat"><span class="scribe-speaker">Sarah:</span> Hey everyone, how was the weekend?</div>
+            <div class="scribe-entry chit-chat"><span class="scribe-speaker">Abhishek:</span> Great! Went hiking. Alright, let's get started.</div>
+            <div class="scribe-entry decision"><span class="scribe-speaker tag-decision">📌 Decision:</span> We will move forward with PostgreSQL migration this sprint.</div>
+            <div class="scribe-entry"><span class="scribe-speaker">Priya:</span> The API v2 docs are 80% done. I need the auth endpoints spec from Abhishek.</div>
+            <div class="scribe-entry action"><span class="scribe-speaker tag-action">✅ Action:</span> Abhishek to send auth endpoint specs to Priya by EOD Wednesday.</div>
+            <div class="scribe-entry"><span class="scribe-speaker">Mike:</span> I'm blocked on the onboarding designs. Need the brand guidelines from marketing.</div>
+            <div class="scribe-entry blocker"><span class="scribe-speaker tag-blocker">🚫 Blocker:</span> Mike R. is blocked — waiting for brand guidelines from marketing team.</div>
+            <div class="scribe-entry"><span class="scribe-speaker">James:</span> Client permissions flow is almost done. Will push to staging tonight.</div>
+            <div class="scribe-entry action"><span class="scribe-speaker tag-action">✅ Action:</span> James D. to deploy permissions flow to staging by end of today.</div>
+          </div>
+        </div>
+
+        <!-- Highlights Panel -->
+        <div class="pulse-highlights">
+          <div class="highlight-card glass-panel decision-card">
+            <div class="highlight-header"><span class="hl-icon">📌</span><h3>Decision Points</h3></div>
+            <ul>
+              <li>Move forward with PostgreSQL migration this sprint</li>
+              <li>Use new authentication flow for external partners</li>
+              <li>Postpone mobile redesign to Q3</li>
+            </ul>
+          </div>
+          <div class="highlight-card glass-panel action-card">
+            <div class="highlight-header"><span class="hl-icon">✅</span><h3>Action Items</h3></div>
+            <ul>
+              <li><strong>Abhishek</strong> — Send auth endpoint specs to Priya by Wed</li>
+              <li><strong>James D.</strong> — Deploy permissions flow to staging today</li>
+              <li><strong>Sarah K.</strong> — Review security headers PR by Thu</li>
+            </ul>
+          </div>
+          <div class="highlight-card glass-panel blocker-card">
+            <div class="highlight-header"><span class="hl-icon">🚫</span><h3>Blockers</h3></div>
+            <ul>
+              <li><strong>Mike R.</strong> — Waiting for brand guidelines from marketing</li>
+              <li><strong>Priya L.</strong> — Needs auth endpoint specs from Abhishek</li>
+            </ul>
+          </div>
+          <div class="highlight-card glass-panel recall-card">
+            <div class="highlight-header"><span class="hl-icon">🧠</span><h3>Contextual Recall</h3></div>
+            <ul>
+              <li>"Last meeting, Abhishek agreed to complete API docs by May 2"</li>
+              <li>"Team decided to use JWT tokens for external auth on Apr 25"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SETTINGS VIEW ===== -->
+    <section id="view-settings" class="view">
+      <div class="view-header">
+        <h1>Settings & Security</h1>
+        <p class="subtitle">Manage identity tags, encryption, and integrations</p>
+      </div>
+
+      <div class="settings-grid">
+        <!-- Tag Management -->
+        <div class="settings-section glass-panel">
+          <h3>🏷️ Identity Tags</h3>
+          <p>Manage participant access levels and visual tags.</p>
+          <div class="tag-list">
+            <div class="tag-row"><div class="avatar-ring blue"><div class="avatar-placeholder sm">AB</div></div><span>Abhishek</span><span class="tag-badge tag-blue-sm">CORE TEAM</span><button class="btn btn-sm btn-outline">Edit</button></div>
+            <div class="tag-row"><div class="avatar-ring blue"><div class="avatar-placeholder sm">SK</div></div><span>Sarah K.</span><span class="tag-badge tag-blue-sm">CORE TEAM</span><button class="btn btn-sm btn-outline">Edit</button></div>
+            <div class="tag-row"><div class="avatar-ring amber"><div class="avatar-placeholder sm">MR</div></div><span>Mike R.</span><span class="tag-badge tag-amber-sm">GUEST</span><button class="btn btn-sm btn-outline">Edit</button></div>
+            <div class="tag-row"><div class="avatar-ring blue"><div class="avatar-placeholder sm">PL</div></div><span>Priya L.</span><span class="tag-badge tag-blue-sm">CORE TEAM</span><button class="btn btn-sm btn-outline">Edit</button></div>
+            <div class="tag-row"><div class="avatar-ring amber"><div class="avatar-placeholder sm">JD</div></div><span>James D.</span><span class="tag-badge tag-amber-sm">GUEST</span><button class="btn btn-sm btn-outline">Edit</button></div>
+            <div class="tag-row"><div class="avatar-ring blue"><div class="avatar-placeholder sm">RN</div></div><span>Riya N.</span><span class="tag-badge tag-blue-sm">CORE TEAM</span><button class="btn btn-sm btn-outline">Edit</button></div>
+          </div>
+        </div>
+
+        <!-- Encryption Status -->
+        <div class="settings-section glass-panel">
+          <h3>🔒 Encryption Status</h3>
+          <p>End-to-end encryption for tasks and meeting data.</p>
+          <div class="encryption-status">
+            <div class="enc-row"><span>Task Data</span><span class="enc-badge active">🟢 Active — AES-256</span></div>
+            <div class="enc-row"><span>Meeting Audio</span><span class="enc-badge active">🟢 Active — E2EE</span></div>
+            <div class="enc-row"><span>Screen Sharing</span><span class="enc-badge active">🟢 Active — TLS 1.3</span></div>
+            <div class="enc-row"><span>File Transfers</span><span class="enc-badge active">🟢 Active — AES-256</span></div>
+          </div>
+        </div>
+
+        <!-- Proximity Alert -->
+        <div class="settings-section glass-panel">
+          <h3>📍 Proximity-Based Access</h3>
+          <p>Unrecognized devices are placed in Visual-Only mode until verified.</p>
+          <div class="toggle-row"><span>Enable proximity checks</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+          <div class="toggle-row"><span>Auto-restrict screenshots</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+          <div class="toggle-row"><span>Require host verification</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+        </div>
+
+        <!-- Integrations -->
+        <div class="settings-section glass-panel">
+          <h3>🔌 Integrations</h3>
+          <p>Anti Gravity workflow and cross-platform sync.</p>
+          <div class="toggle-row"><span>Zero-Latency Sync</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+          <div class="toggle-row"><span>Cross-Platform Portability</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+          <div class="toggle-row"><span>Breakout Room Intelligence</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+          <div class="toggle-row"><span>Voice Isolation Engine</span><label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- New Task Modal -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal glass-panel" id="modal-new-task">
+      <h3>Create New Task</h3>
+      <div class="form-group"><label>Title</label><input type="text" id="task-title" placeholder="Enter task title..." /></div>
+      <div class="form-group"><label>Description</label><textarea id="task-desc" placeholder="Describe the task..." rows="3"></textarea></div>
+      <div class="form-row">
+        <div class="form-group"><label>Priority</label><select id="task-priority"><option value="high">🔴 High</option><option value="medium" selected>🟡 Medium</option><option value="low">🟢 Low</option></select></div>
+        <div class="form-group"><label>Assign</label><select id="task-assign"><option>Abhishek</option><option>Sarah K.</option><option>Mike R.</option><option>Priya L.</option><option>James D.</option><option>Riya N.</option></select></div>
+      </div>
+      <div class="modal-actions"><button class="btn btn-outline" id="btn-cancel-task">Cancel</button><button class="btn btn-primary" id="btn-save-task">Create Task</button></div>
+    </div>
+  </div>
+
+</body>
+</html>
