@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aegis Stream — Unified Task-Communication Platform</title>
-  <meta name="description" content="Aegis Stream integrates video meetings, task management, AI intelligence, and security tagging into a single pane of glass." />
+  <title>Aegis Stream — Secure Team Communication Platform</title>
+  <meta name="description" content="Aegis Stream: High-security team communication with AI meeting intelligence, Zoom integration, and task management." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <!-- Sidebar Navigation -->
+
+  <!-- ========== SIDEBAR ========== -->
   <nav id="sidebar">
     <div class="sidebar-logo">
       <div class="logo-icon">
@@ -23,49 +24,62 @@
       </div>
       <span class="logo-text">Aegis Stream</span>
     </div>
+
     <ul class="nav-links">
       <li><a href="#dashboard" class="nav-link active" data-view="dashboard">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         <span>Dashboard</span>
       </a></li>
+      <li><a href="#messages" class="nav-link" data-view="messages">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <span>Messages</span>
+        <span class="nav-badge">3</span>
+      </a></li>
       <li><a href="#meeting" class="nav-link" data-view="meeting">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
         <span>Meeting</span>
+      </a></li>
+      <li><a href="#ainotes" class="nav-link" data-view="ainotes">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <span>AI Notes</span>
       </a></li>
       <li><a href="#tasks" class="nav-link" data-view="tasks">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
         <span>Tasks</span>
       </a></li>
-      <li><a href="#pulse" class="nav-link" data-view="pulse">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        <span>AI Pulse</span>
-      </a></li>
-      <li><a href="#settings" class="nav-link" data-view="settings">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-        <span>Settings</span>
+      <li><a href="#security" class="nav-link" data-view="security">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Security</span>
+        <span class="nav-badge warn">2</span>
       </a></li>
     </ul>
+
     <div class="sidebar-bottom">
-      <div class="user-badge tag-blue">
-        <div class="avatar-ring blue">
+      <div class="user-badge">
+        <div class="avatar-ring admin">
           <div class="avatar-placeholder">AB</div>
         </div>
         <div class="user-info">
           <span class="user-name">Abhishek</span>
-          <span class="user-role">Core Team</span>
+          <span class="role-badge role-admin">👑 ADMIN</span>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Main Content Area -->
+  <!-- ========== MAIN CONTENT ========== -->
   <main id="main-content">
 
     <!-- ===== DASHBOARD VIEW ===== -->
     <section id="view-dashboard" class="view active">
       <div class="view-header">
-        <h1>Command Center</h1>
-        <p class="subtitle">Your unified workspace at a glance</p>
+        <div>
+          <h1>Command Center</h1>
+          <p class="subtitle">Your unified secure workspace at a glance</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-primary" onclick="navigate('meeting')">🎥 Start Meeting</button>
+        </div>
       </div>
 
       <!-- Stats Row -->
@@ -83,160 +97,430 @@
           <div class="stat-data"><span class="stat-value" data-count="8">0</span><span class="stat-label">Active Members</span></div>
         </div>
         <div class="stat-card glass-panel">
-          <div class="stat-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <div class="stat-data"><span class="stat-value" data-count="23">0</span><span class="stat-label">AI Highlights</span></div>
+          <div class="stat-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="stat-data"><span class="stat-value" data-count="100">0</span><span class="stat-label">Security Score</span></div>
         </div>
       </div>
 
-      <!-- Workflow Loop -->
-      <div class="section-title"><h2>Workflow Loop</h2></div>
-      <div class="workflow-loop glass-panel">
-        <div class="wf-step active" id="wf-initiate">
-          <div class="wf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></div>
-          <span>Initiate</span>
-          <p class="wf-desc">Start an Aegis Meet</p>
+      <!-- Security Status Dashboard -->
+      <div class="section-title"><h2>🔒 Security Status</h2></div>
+      <div class="security-dash">
+        <div class="sec-card glass-panel">
+          <div class="sec-ring-wrap">
+            <svg class="sec-ring" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" stroke="rgba(255,255,255,0.06)" stroke-width="8" fill="none"/>
+              <circle cx="50" cy="50" r="42" stroke="#10b981" stroke-width="8" fill="none" stroke-dasharray="264" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+            </svg>
+            <span class="sec-ring-label">100%</span>
+          </div>
+          <div class="sec-info">
+            <h4>Encryption</h4>
+            <p>AES-256 · All channels</p>
+            <span class="sec-status active">🟢 Active</span>
+          </div>
         </div>
-        <div class="wf-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        <div class="wf-step" id="wf-tag">
-          <div class="wf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
-          <span>Tag</span>
-          <p class="wf-desc">Partners join with Amber Tags</p>
+        <div class="sec-card glass-panel">
+          <div class="sec-ring-wrap">
+            <svg class="sec-ring" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" stroke="rgba(255,255,255,0.06)" stroke-width="8" fill="none"/>
+              <circle cx="50" cy="50" r="42" stroke="#7c3aed" stroke-width="8" fill="none" stroke-dasharray="264" stroke-dashoffset="26" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+            </svg>
+            <span class="sec-ring-label">90%</span>
+          </div>
+          <div class="sec-info">
+            <h4>2FA Enforced</h4>
+            <p>7 of 8 members enabled</p>
+            <span class="sec-status warn">⚠️ 1 Pending</span>
+          </div>
         </div>
-        <div class="wf-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        <div class="wf-step" id="wf-execute">
-          <div class="wf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <span>Execute</span>
-          <p class="wf-desc">AI captures & converts to tasks</p>
-        </div>
-        <div class="wf-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        <div class="wf-step" id="wf-review">
-          <div class="wf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-          <span>Review</span>
-          <p class="wf-desc">Dashboard updates with highlights</p>
+        <div class="sec-card glass-panel">
+          <div class="sec-ring-wrap">
+            <svg class="sec-ring" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" stroke="rgba(255,255,255,0.06)" stroke-width="8" fill="none"/>
+              <circle cx="50" cy="50" r="42" stroke="#06d6a0" stroke-width="8" fill="none" stroke-dasharray="264" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+            </svg>
+            <span class="sec-ring-label">100%</span>
+          </div>
+          <div class="sec-info">
+            <h4>Sandbox</h4>
+            <p>Guest isolation enabled</p>
+            <span class="sec-status active">🟢 Active</span>
+          </div>
         </div>
       </div>
 
-      <!-- Feature Cards -->
-      <div class="section-title"><h2>Platform Features</h2></div>
-      <div class="feature-grid">
-        <div class="feature-card glass-panel">
-          <div class="feature-icon-wrap gradient-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <h3>Interactive Co-op</h3>
-          <p>Multiple users annotate and move elements on a shared screen simultaneously.</p>
+      <!-- Team Members with Role Badges -->
+      <div class="section-title"><h2>👥 Team Overview</h2></div>
+      <div class="team-grid">
+        <div class="team-card glass-panel">
+          <div class="avatar-ring admin"><div class="avatar-placeholder">AB</div></div>
+          <span class="team-name">Abhishek</span>
+          <span class="role-badge role-admin">👑 ADMIN</span>
+          <span class="status-dot online"></span>
         </div>
-        <div class="feature-card glass-panel">
-          <div class="feature-icon-wrap gradient-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>End-to-End Encryption</h3>
-          <p>Tasks discussed in meetings are encrypted and only accessible to participants with the correct Tag.</p>
+        <div class="team-card glass-panel">
+          <div class="avatar-ring lead"><div class="avatar-placeholder">SK</div></div>
+          <span class="team-name">Sarah K.</span>
+          <span class="role-badge role-lead">⭐ LEAD</span>
+          <span class="status-dot online"></span>
         </div>
-        <div class="feature-card glass-panel">
-          <div class="feature-icon-wrap gradient-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
-          <h3>Voice Isolation</h3>
-          <p>Separates multiple voices so the AI can attribute notes to the correct person.</p>
+        <div class="team-card glass-panel">
+          <div class="avatar-ring engineer"><div class="avatar-placeholder">PL</div></div>
+          <span class="team-name">Priya L.</span>
+          <span class="role-badge role-engineer">⚙️ ENGINEER</span>
+          <span class="status-dot online"></span>
         </div>
-        <div class="feature-card glass-panel">
-          <div class="feature-icon-wrap gradient-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-          <h3>Contextual Recall</h3>
-          <p>AI whispers reminders from past meetings: "You agreed to finish the API docs by today."</p>
+        <div class="team-card glass-panel">
+          <div class="avatar-ring engineer"><div class="avatar-placeholder">RN</div></div>
+          <span class="team-name">Riya N.</span>
+          <span class="role-badge role-engineer">⚙️ ENGINEER</span>
+          <span class="status-dot away"></span>
         </div>
-        <div class="feature-card glass-panel">
-          <div class="feature-icon-wrap gradient-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <h3>Zero-Latency Sync</h3>
-          <p>Task updates pushed across the cloud in milliseconds preventing double-work or stale data.</p>
+        <div class="team-card glass-panel guest-card">
+          <div class="avatar-ring guest"><div class="avatar-placeholder">MR</div></div>
+          <span class="team-name">Mike R.</span>
+          <span class="role-badge role-guest">🛡 GUEST</span>
+          <span class="status-dot online"></span>
         </div>
-        <div class="feature-card glass-panel">
-          <div class="feature-icon-wrap gradient-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
-          <h3>Cross-Platform</h3>
-          <p>Security tags and AI notes remain consistent whether on mobile or high-end workstation.</p>
+        <div class="team-card glass-panel guest-card">
+          <div class="avatar-ring guest"><div class="avatar-placeholder">JD</div></div>
+          <span class="team-name">James D.</span>
+          <span class="role-badge role-guest">🛡 GUEST</span>
+          <span class="status-dot offline"></span>
         </div>
       </div>
     </section>
 
-    <!-- ===== MEETING VIEW ===== -->
-    <section id="view-meeting" class="view">
+    <!-- ===== MESSAGES VIEW ===== -->
+    <section id="view-messages" class="view">
       <div class="view-header">
-        <h1>Aegis Meet</h1>
-        <div class="meeting-controls">
-          <span class="live-badge"><span class="live-dot"></span> LIVE</span>
-          <span class="meeting-timer">00:00:00</span>
-          <button class="btn btn-outline" id="btn-toggle-tasks">📋 Task Overlay</button>
-          <button class="btn btn-danger" id="btn-end-call">End Call</button>
+        <div>
+          <h1>Messages</h1>
+          <p class="subtitle">Secure team communication</p>
         </div>
       </div>
 
-      <div class="meeting-layout">
+      <div class="messages-layout">
+        <!-- Channel List -->
+        <div class="channel-list glass-panel">
+          <h3>Channels</h3>
+          <div class="channel active" data-channel="general">
+            <span class="channel-hash">#</span>
+            <span>general</span>
+            <span class="channel-badge">3</span>
+          </div>
+          <div class="channel" data-channel="engineering">
+            <span class="channel-hash">#</span>
+            <span>engineering</span>
+          </div>
+          <div class="channel" data-channel="design">
+            <span class="channel-hash">#</span>
+            <span>design</span>
+          </div>
+          <div class="channel" data-channel="security-alerts">
+            <span class="channel-hash">🔒</span>
+            <span>security-alerts</span>
+            <span class="channel-badge warn">1</span>
+          </div>
+          <h3 style="margin-top:1rem;">Direct Messages</h3>
+          <div class="channel" data-channel="dm-sarah">
+            <div class="avatar-ring lead sm"><div class="avatar-placeholder xs">SK</div></div>
+            <span>Sarah K.</span>
+          </div>
+          <div class="channel" data-channel="dm-mike">
+            <div class="avatar-ring guest sm"><div class="avatar-placeholder xs">MR</div></div>
+            <span>Mike R. <span class="role-badge role-guest mini">🛡 GUEST</span></span>
+          </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat-area glass-panel">
+          <div class="chat-header">
+            <span class="channel-hash">#</span>
+            <span id="chat-channel-name">general</span>
+            <span class="chat-members">8 members</span>
+          </div>
+          <div class="chat-messages" id="chat-messages">
+            <!-- Messages populated by JS -->
+          </div>
+          <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type a message..." />
+            <button class="btn btn-primary btn-send" id="btn-send-msg">Send</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MEETING (ZOOM) VIEW ===== -->
+    <section id="view-meeting" class="view">
+      <!-- Pre-meeting state -->
+      <div id="meeting-lobby">
+        <div class="view-header">
+          <div>
+            <h1>Zoom Meeting</h1>
+            <p class="subtitle">Start or join a secure video meeting</p>
+          </div>
+        </div>
+        <div class="meeting-start-card glass-panel">
+          <div class="meeting-start-icon">📹</div>
+          <h2>Sprint Planning — Q2</h2>
+          <p>Scheduled for today · 6 participants</p>
+          <div class="meeting-participants-preview">
+            <div class="avatar-ring admin sm"><div class="avatar-placeholder xs">AB</div></div>
+            <div class="avatar-ring lead sm"><div class="avatar-placeholder xs">SK</div></div>
+            <div class="avatar-ring engineer sm"><div class="avatar-placeholder xs">PL</div></div>
+            <div class="avatar-ring engineer sm"><div class="avatar-placeholder xs">RN</div></div>
+            <div class="avatar-ring guest sm"><div class="avatar-placeholder xs">MR</div></div>
+            <div class="avatar-ring guest sm"><div class="avatar-placeholder xs">JD</div></div>
+          </div>
+          <button class="btn btn-primary btn-lg" id="btn-start-meeting">🎥 Start Meeting</button>
+        </div>
+      </div>
+
+      <!-- Live meeting state -->
+      <div id="meeting-live" style="display:none;">
+        <!-- AI Recording Banner -->
+        <div class="ai-recording-banner">
+          <div class="rec-indicator">
+            <span class="rec-dot"></span>
+            <span>AI Recording</span>
+          </div>
+          <div class="rec-transcription" id="rec-transcription">
+            <span class="rec-label">Live Transcription:</span>
+            <span class="rec-text" id="rec-text">Waiting for audio...</span>
+          </div>
+          <span class="meeting-timer" id="meeting-timer">00:00:00</span>
+        </div>
+
         <!-- Video Grid -->
-        <div class="video-grid">
-          <div class="video-tile active-speaker">
-            <div class="video-placeholder gradient-mesh-1">
-              <div class="avatar-ring blue large"><div class="avatar-placeholder">AB</div></div>
+        <div class="meeting-layout">
+          <div class="video-grid">
+            <div class="video-tile active-speaker" data-participant="abhishek">
+              <div class="video-placeholder gradient-mesh-1">
+                <div class="avatar-ring admin large"><div class="avatar-placeholder lg">AB</div></div>
+              </div>
+              <div class="tile-bar">
+                <span class="tile-name">Abhishek</span>
+                <span class="role-badge role-admin mini">👑 ADMIN</span>
+              </div>
+              <div class="speaking-indicator"><span></span><span></span><span></span><span></span></div>
             </div>
-            <div class="tile-bar"><span class="tile-name">Abhishek</span><span class="tag-badge tag-blue-sm">CORE</span></div>
-            <div class="speaking-indicator"><span></span><span></span><span></span><span></span></div>
+            <div class="video-tile" data-participant="sarah">
+              <div class="video-placeholder gradient-mesh-2">
+                <div class="avatar-ring lead large"><div class="avatar-placeholder lg">SK</div></div>
+              </div>
+              <div class="tile-bar">
+                <span class="tile-name">Sarah K.</span>
+                <span class="role-badge role-lead mini">⭐ LEAD</span>
+              </div>
+            </div>
+            <div class="video-tile" data-participant="mike">
+              <div class="video-placeholder gradient-mesh-3">
+                <div class="avatar-ring guest large"><div class="avatar-placeholder lg">MR</div></div>
+              </div>
+              <div class="tile-bar">
+                <span class="tile-name">Mike R.</span>
+                <span class="role-badge role-guest mini">🛡 GUEST</span>
+              </div>
+              <div class="guest-overlay">🛡 GUEST</div>
+            </div>
+            <div class="video-tile" data-participant="priya">
+              <div class="video-placeholder gradient-mesh-4">
+                <div class="avatar-ring engineer large"><div class="avatar-placeholder lg">PL</div></div>
+              </div>
+              <div class="tile-bar">
+                <span class="tile-name">Priya L.</span>
+                <span class="role-badge role-engineer mini">⚙️ ENGINEER</span>
+              </div>
+            </div>
+            <div class="video-tile" data-participant="james">
+              <div class="video-placeholder gradient-mesh-5">
+                <div class="avatar-ring guest large"><div class="avatar-placeholder lg">JD</div></div>
+              </div>
+              <div class="tile-bar">
+                <span class="tile-name">James D.</span>
+                <span class="role-badge role-guest mini">🛡 GUEST</span>
+              </div>
+              <div class="guest-overlay">🛡 GUEST</div>
+            </div>
+            <div class="video-tile" data-participant="riya">
+              <div class="video-placeholder gradient-mesh-6">
+                <div class="avatar-ring engineer large"><div class="avatar-placeholder lg">RN</div></div>
+              </div>
+              <div class="tile-bar">
+                <span class="tile-name">Riya N.</span>
+                <span class="role-badge role-engineer mini">⚙️ ENGINEER</span>
+              </div>
+            </div>
           </div>
-          <div class="video-tile">
-            <div class="video-placeholder gradient-mesh-2">
-              <div class="avatar-ring blue large"><div class="avatar-placeholder">SK</div></div>
+
+          <!-- In-meeting AI Notes Panel -->
+          <div class="meeting-ai-panel glass-panel">
+            <div class="ai-panel-header">
+              <h3>🤖 Live AI Notes</h3>
+              <span class="live-mini-badge"><span class="rec-dot sm"></span> LIVE</span>
             </div>
-            <div class="tile-bar"><span class="tile-name">Sarah K.</span><span class="tag-badge tag-blue-sm">CORE</span></div>
-          </div>
-          <div class="video-tile">
-            <div class="video-placeholder gradient-mesh-3">
-              <div class="avatar-ring amber large"><div class="avatar-placeholder">MR</div></div>
+            <div class="ai-panel-feed" id="ai-panel-feed">
+              <div class="ai-note-entry decision">📌 Move forward with PostgreSQL migration this sprint</div>
+              <div class="ai-note-entry action">✅ Abhishek → Send auth specs to Priya by Wed</div>
+              <div class="ai-note-entry blocker">🚫 Mike R. blocked — waiting for brand guidelines</div>
             </div>
-            <div class="tile-bar"><span class="tile-name">Mike R.</span><span class="tag-badge tag-amber-sm">GUEST</span></div>
-          </div>
-          <div class="video-tile">
-            <div class="video-placeholder gradient-mesh-4">
-              <div class="avatar-ring blue large"><div class="avatar-placeholder">PL</div></div>
-            </div>
-            <div class="tile-bar"><span class="tile-name">Priya L.</span><span class="tag-badge tag-blue-sm">CORE</span></div>
-          </div>
-          <div class="video-tile">
-            <div class="video-placeholder gradient-mesh-5">
-              <div class="avatar-ring amber large"><div class="avatar-placeholder">JD</div></div>
-            </div>
-            <div class="tile-bar"><span class="tile-name">James D.</span><span class="tag-badge tag-amber-sm">GUEST</span></div>
-          </div>
-          <div class="video-tile">
-            <div class="video-placeholder gradient-mesh-6">
-              <div class="avatar-ring blue large"><div class="avatar-placeholder">RN</div></div>
-            </div>
-            <div class="tile-bar"><span class="tile-name">Riya N.</span><span class="tag-badge tag-blue-sm">CORE</span></div>
           </div>
         </div>
 
-        <!-- Task Overlay -->
-        <div class="task-overlay glass-panel" id="task-overlay">
-          <div class="overlay-header">
-            <h3>🗂 Task Board</h3>
-            <button class="btn-icon" id="btn-close-overlay">✕</button>
+        <!-- Zoom Controls Bar -->
+        <div class="zoom-controls">
+          <button class="zoom-btn" id="btn-mute" title="Mute/Unmute">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <span>Mute</span>
+          </button>
+          <button class="zoom-btn" id="btn-camera" title="Camera On/Off">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            <span>Camera</span>
+          </button>
+          <button class="zoom-btn" id="btn-share" title="Share Screen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span>Share</span>
+          </button>
+          <button class="zoom-btn" id="btn-reactions" title="Reactions">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            <span>React</span>
+          </button>
+          <button class="zoom-btn btn-end" id="btn-end-call" title="End Call">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.68 13.31a16 16 0 003.41 2.6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7 2 2 0 011.72 2v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l-3.41-2.6z"/><line x1="23" y1="1" x2="1" y2="23"/></svg>
+            <span>End</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AI NOTES VIEW ===== -->
+    <section id="view-ainotes" class="view">
+      <div class="view-header">
+        <div>
+          <h1>🤖 AI Meeting Notes</h1>
+          <p class="subtitle">Intelligent meeting summaries, action items, and sentiment analysis</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-primary" id="btn-export-pdf">📄 Export to PDF</button>
+        </div>
+      </div>
+
+      <!-- Key Discussion Points -->
+      <div class="section-title"><h2>🎯 Key Discussion Points</h2></div>
+      <div class="discussion-points">
+        <div class="dp-card glass-panel dp-decision">
+          <div class="dp-color-dot blue"></div>
+          <div class="dp-content">
+            <span class="dp-tag tag-decision">DECISION</span>
+            <p>Move forward with PostgreSQL migration this sprint. All teams to coordinate data transfer by Friday.</p>
+            <span class="dp-time">10:15 AM · Sprint Planning</span>
           </div>
-          <div class="kanban-mini">
-            <div class="kanban-col">
-              <div class="kanban-col-header todo">To Do</div>
-              <div class="kanban-card">Fix login timeout issue<span class="kanban-assignee tag-blue-sm">AB</span></div>
-              <div class="kanban-card">Update security headers<span class="kanban-assignee tag-blue-sm">SK</span></div>
-            </div>
-            <div class="kanban-col">
-              <div class="kanban-col-header progress">In Progress</div>
-              <div class="kanban-card">API documentation<span class="kanban-assignee tag-blue-sm">PL</span></div>
-              <div class="kanban-card">Client onboarding flow<span class="kanban-assignee tag-amber-sm">MR</span></div>
-            </div>
-            <div class="kanban-col">
-              <div class="kanban-col-header done">Done</div>
-              <div class="kanban-card completed">Database migration<span class="kanban-assignee tag-blue-sm">RN</span></div>
-            </div>
+        </div>
+        <div class="dp-card glass-panel dp-decision">
+          <div class="dp-color-dot blue"></div>
+          <div class="dp-content">
+            <span class="dp-tag tag-decision">DECISION</span>
+            <p>Use new JWT-based authentication flow for all external partner integrations.</p>
+            <span class="dp-time">10:22 AM · Sprint Planning</span>
+          </div>
+        </div>
+        <div class="dp-card glass-panel dp-blocker">
+          <div class="dp-color-dot red"></div>
+          <div class="dp-content">
+            <span class="dp-tag tag-blocker">BLOCKER</span>
+            <p>Mike R. is blocked on onboarding screen designs — waiting for brand guidelines from marketing team.</p>
+            <span class="dp-time">10:30 AM · Sprint Planning</span>
+          </div>
+        </div>
+        <div class="dp-card glass-panel dp-blocker">
+          <div class="dp-color-dot red"></div>
+          <div class="dp-content">
+            <span class="dp-tag tag-blocker">BLOCKER</span>
+            <p>Priya needs auth endpoint specifications from Abhishek before completing API v2 documentation.</p>
+            <span class="dp-time">10:35 AM · Sprint Planning</span>
+          </div>
+        </div>
+        <div class="dp-card glass-panel dp-info">
+          <div class="dp-color-dot green"></div>
+          <div class="dp-content">
+            <span class="dp-tag tag-info">UPDATE</span>
+            <p>Database migration completed ahead of schedule by Riya. All systems running on PostgreSQL.</p>
+            <span class="dp-time">10:40 AM · Sprint Planning</span>
           </div>
         </div>
       </div>
 
-      <!-- AI Whisper Bar -->
-      <div class="ai-whisper-bar glass-panel" id="ai-whisper">
-        <div class="whisper-icon">🤖</div>
-        <div class="whisper-text">
-          <span class="whisper-label">AI Whisper:</span>
-          <span class="whisper-content" id="whisper-content">Last meeting, Abhishek agreed to finish the API documentation by today.</span>
+      <!-- AI Action Items -->
+      <div class="section-title"><h2>✅ AI-Extracted Action Items</h2></div>
+      <div class="action-items-list">
+        <div class="ai-action glass-panel">
+          <div class="ai-action-check"><input type="checkbox" id="ai-act-1"/><label for="ai-act-1"></label></div>
+          <div class="ai-action-content">
+            <p>Send auth endpoint specs to Priya</p>
+            <span class="ai-action-meta">Auto-assigned to <strong>Abhishek</strong> · Due: Wed, May 7</span>
+          </div>
+          <div class="avatar-ring admin sm"><div class="avatar-placeholder xs">AB</div></div>
+        </div>
+        <div class="ai-action glass-panel">
+          <div class="ai-action-check"><input type="checkbox" id="ai-act-2"/><label for="ai-act-2"></label></div>
+          <div class="ai-action-content">
+            <p>Deploy permissions flow to staging</p>
+            <span class="ai-action-meta">Auto-assigned to <strong>James D.</strong> · Due: Today</span>
+          </div>
+          <div class="avatar-ring guest sm"><div class="avatar-placeholder xs">JD</div></div>
+        </div>
+        <div class="ai-action glass-panel">
+          <div class="ai-action-check"><input type="checkbox" id="ai-act-3" checked/><label for="ai-act-3"></label></div>
+          <div class="ai-action-content">
+            <p>Review security headers PR</p>
+            <span class="ai-action-meta">Auto-assigned to <strong>Sarah K.</strong> · Due: Thu, May 8</span>
+          </div>
+          <div class="avatar-ring lead sm"><div class="avatar-placeholder xs">SK</div></div>
+        </div>
+        <div class="ai-action glass-panel">
+          <div class="ai-action-check"><input type="checkbox" id="ai-act-4"/><label for="ai-act-4"></label></div>
+          <div class="ai-action-content">
+            <p>Follow up with marketing for brand guidelines</p>
+            <span class="ai-action-meta">Auto-assigned to <strong>Mike R.</strong> <span class="role-badge role-guest mini">🛡 GUEST</span> · Due: Fri, May 9</span>
+          </div>
+          <div class="avatar-ring guest sm"><div class="avatar-placeholder xs">MR</div></div>
+        </div>
+      </div>
+
+      <!-- Sentiment Analysis -->
+      <div class="section-title"><h2>📊 Meeting Sentiment Analysis</h2></div>
+      <div class="sentiment-grid">
+        <div class="sentiment-card glass-panel">
+          <h4>Overall Tone</h4>
+          <div class="sentiment-gauge">
+            <div class="gauge-bar">
+              <div class="gauge-fill positive" style="width:72%"></div>
+            </div>
+            <div class="gauge-labels"><span>Negative</span><span>Neutral</span><span>Positive</span></div>
+          </div>
+          <span class="sentiment-verdict positive">😊 Mostly Positive (72%)</span>
+        </div>
+        <div class="sentiment-card glass-panel">
+          <h4>Energy Level</h4>
+          <div class="sentiment-gauge">
+            <div class="gauge-bar">
+              <div class="gauge-fill energy" style="width:65%"></div>
+            </div>
+            <div class="gauge-labels"><span>Low</span><span>Medium</span><span>High</span></div>
+          </div>
+          <span class="sentiment-verdict energy">⚡ Moderate-High (65%)</span>
+        </div>
+        <div class="sentiment-card glass-panel">
+          <h4>Blockers Detected</h4>
+          <div class="blocker-count-wrap">
+            <span class="blocker-count">2</span>
+            <span class="blocker-label">Active Blockers</span>
+          </div>
+          <ul class="blocker-mini-list">
+            <li>🚫 Mike R. — Brand guidelines</li>
+            <li>🚫 Priya L. — Auth specs</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -244,181 +528,249 @@
     <!-- ===== TASKS VIEW ===== -->
     <section id="view-tasks" class="view">
       <div class="view-header">
-        <h1>Task Board</h1>
+        <div>
+          <h1>Task Board</h1>
+          <p class="subtitle">Manage and track team progress</p>
+        </div>
         <button class="btn btn-primary" id="btn-add-task">+ New Task</button>
       </div>
+
+      <!-- Task Filters -->
+      <div class="task-filters">
+        <div class="filter-group">
+          <span class="filter-label">Status:</span>
+          <button class="filter-pill active" data-filter-status="all">All</button>
+          <button class="filter-pill" data-filter-status="todo">To Do</button>
+          <button class="filter-pill" data-filter-status="progress">In Progress</button>
+          <button class="filter-pill" data-filter-status="done">Done</button>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Tags:</span>
+          <button class="filter-pill tag-pill" data-filter-tag="all">All</button>
+          <button class="filter-pill tag-pill urgent" data-filter-tag="URGENT">🔴 URGENT</button>
+          <button class="filter-pill tag-pill design" data-filter-tag="DESIGN">🎨 DESIGN</button>
+          <button class="filter-pill tag-pill dev" data-filter-tag="DEV">💻 DEV</button>
+          <button class="filter-pill tag-pill review" data-filter-tag="REVIEW">👁 REVIEW</button>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Assignee:</span>
+          <select id="filter-assignee" class="filter-select">
+            <option value="all">All Members</option>
+            <option value="Abhishek">Abhishek</option>
+            <option value="Sarah K.">Sarah K.</option>
+            <option value="Priya L.">Priya L.</option>
+            <option value="Riya N.">Riya N.</option>
+            <option value="Mike R.">Mike R.</option>
+            <option value="James D.">James D.</option>
+          </select>
+        </div>
+      </div>
+
       <div class="kanban-board">
+        <!-- To Do Column -->
         <div class="kanban-column" data-status="todo">
-          <div class="column-header"><span class="col-dot todo"></span><h3>To Do</h3><span class="col-count">3</span></div>
+          <div class="column-header">
+            <span class="col-dot todo"></span>
+            <h3>To Do</h3>
+            <span class="col-count" id="count-todo">3</span>
+          </div>
+          <div class="col-progress"><div class="col-progress-bar todo-bar" style="width:0%"></div></div>
           <div class="column-cards" id="col-todo">
-            <div class="task-card glass-panel" draggable="true" data-id="t1">
+            <div class="task-card glass-panel" draggable="true" data-id="t1" data-tags="URGENT,DEV" data-assignee="Abhishek">
               <div class="task-priority high"></div>
+              <div class="task-tags"><span class="task-tag urgent">URGENT</span><span class="task-tag dev">DEV</span></div>
               <h4>Fix login timeout issue</h4>
               <p>Users report session drops after 15 min idle.</p>
-              <div class="task-meta"><span class="tag-badge tag-blue-sm">Abhishek</span><span class="task-due">Due: May 5</span></div>
+              <div class="task-meta">
+                <div class="task-meta-left"><div class="avatar-ring admin sm"><div class="avatar-placeholder xs">AB</div></div><span class="assignee-name">Abhishek</span></div>
+                <span class="task-due">May 5</span>
+              </div>
             </div>
-            <div class="task-card glass-panel" draggable="true" data-id="t2">
+            <div class="task-card glass-panel" draggable="true" data-id="t2" data-tags="DEV,REVIEW" data-assignee="Sarah K.">
               <div class="task-priority medium"></div>
+              <div class="task-tags"><span class="task-tag dev">DEV</span><span class="task-tag review">REVIEW</span></div>
               <h4>Update security headers</h4>
               <p>Add HSTS and CSP headers to all endpoints.</p>
-              <div class="task-meta"><span class="tag-badge tag-blue-sm">Sarah K.</span><span class="task-due">Due: May 7</span></div>
+              <div class="task-meta">
+                <div class="task-meta-left"><div class="avatar-ring lead sm"><div class="avatar-placeholder xs">SK</div></div><span class="assignee-name">Sarah K.</span></div>
+                <span class="task-due">May 7</span>
+              </div>
             </div>
-            <div class="task-card glass-panel" draggable="true" data-id="t3">
+            <div class="task-card glass-panel" draggable="true" data-id="t3" data-tags="DESIGN" data-assignee="Mike R.">
               <div class="task-priority low"></div>
+              <div class="task-tags"><span class="task-tag design">DESIGN</span></div>
               <h4>Design onboarding screens</h4>
               <p>Create wireframes for the new user onboarding.</p>
-              <div class="task-meta"><span class="tag-badge tag-amber-sm">Mike R.</span><span class="task-due">Due: May 10</span></div>
+              <div class="task-meta">
+                <div class="task-meta-left"><div class="avatar-ring guest sm"><div class="avatar-placeholder xs">MR</div></div><span class="assignee-name">Mike R. 🛡</span></div>
+                <span class="task-due">May 10</span>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- In Progress Column -->
         <div class="kanban-column" data-status="progress">
-          <div class="column-header"><span class="col-dot progress"></span><h3>In Progress</h3><span class="col-count">2</span></div>
+          <div class="column-header">
+            <span class="col-dot progress"></span>
+            <h3>In Progress</h3>
+            <span class="col-count" id="count-progress">2</span>
+          </div>
+          <div class="col-progress"><div class="col-progress-bar progress-bar" style="width:50%"></div></div>
           <div class="column-cards" id="col-progress">
-            <div class="task-card glass-panel" draggable="true" data-id="t4">
+            <div class="task-card glass-panel" draggable="true" data-id="t4" data-tags="URGENT,DEV" data-assignee="Priya L.">
               <div class="task-priority high"></div>
+              <div class="task-tags"><span class="task-tag urgent">URGENT</span><span class="task-tag dev">DEV</span></div>
               <h4>API documentation</h4>
               <p>Complete REST API docs for v2 endpoints.</p>
-              <div class="task-meta"><span class="tag-badge tag-blue-sm">Priya L.</span><span class="task-due">Due: May 3</span></div>
+              <div class="task-meta">
+                <div class="task-meta-left"><div class="avatar-ring engineer sm"><div class="avatar-placeholder xs">PL</div></div><span class="assignee-name">Priya L.</span></div>
+                <span class="task-due">May 3</span>
+              </div>
             </div>
-            <div class="task-card glass-panel" draggable="true" data-id="t5">
+            <div class="task-card glass-panel" draggable="true" data-id="t5" data-tags="DEV" data-assignee="James D.">
               <div class="task-priority medium"></div>
+              <div class="task-tags"><span class="task-tag dev">DEV</span></div>
               <h4>Client onboarding flow</h4>
               <p>Build the invite & permissions workflow.</p>
-              <div class="task-meta"><span class="tag-badge tag-amber-sm">James D.</span><span class="task-due">Due: May 8</span></div>
+              <div class="task-meta">
+                <div class="task-meta-left"><div class="avatar-ring guest sm"><div class="avatar-placeholder xs">JD</div></div><span class="assignee-name">James D. 🛡</span></div>
+                <span class="task-due">May 8</span>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Done Column -->
         <div class="kanban-column" data-status="done">
-          <div class="column-header"><span class="col-dot done"></span><h3>Done</h3><span class="col-count">2</span></div>
+          <div class="column-header">
+            <span class="col-dot done"></span>
+            <h3>Done</h3>
+            <span class="col-count" id="count-done">2</span>
+          </div>
+          <div class="col-progress"><div class="col-progress-bar done-bar" style="width:100%"></div></div>
           <div class="column-cards" id="col-done">
-            <div class="task-card glass-panel completed" draggable="true" data-id="t6">
+            <div class="task-card glass-panel completed" draggable="true" data-id="t6" data-tags="DEV" data-assignee="Riya N.">
               <div class="task-priority high"></div>
+              <div class="task-tags"><span class="task-tag dev">DEV</span></div>
               <h4>Database migration</h4>
               <p>Migrate from MySQL to PostgreSQL.</p>
-              <div class="task-meta"><span class="tag-badge tag-blue-sm">Riya N.</span><span class="task-due">Completed</span></div>
+              <div class="task-meta">
+                <div class="task-meta-left"><div class="avatar-ring engineer sm"><div class="avatar-placeholder xs">RN</div></div><span class="assignee-name">Riya N.</span></div>
+                <span class="task-due completed">Completed</span>
+              </div>
             </div>
-            <div class="task-card glass-panel completed" draggable="true" data-id="t7">
+            <div class="task-card glass-panel completed" draggable="true" data-id="t7" data-tags="REVIEW" data-assignee="Abhishek">
               <div class="task-priority medium"></div>
+              <div class="task-tags"><span class="task-tag review">REVIEW</span></div>
               <h4>SSL certificate renewal</h4>
               <p>Renew wildcard cert for all subdomains.</p>
-              <div class="task-meta"><span class="tag-badge tag-blue-sm">Abhishek</span><span class="task-due">Completed</span></div>
+              <div class="task-meta">
+                <div class="task-meta-left"><div class="avatar-ring admin sm"><div class="avatar-placeholder xs">AB</div></div><span class="assignee-name">Abhishek</span></div>
+                <span class="task-due completed">Completed</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== AI PULSE VIEW ===== -->
-    <section id="view-pulse" class="view">
+    <!-- ===== SECURITY VIEW ===== -->
+    <section id="view-security" class="view">
       <div class="view-header">
-        <h1>AI Pulse Intelligence</h1>
-        <p class="subtitle">Your digital secretary — context-aware meeting intelligence</p>
+        <div>
+          <h1>🔒 Security Center</h1>
+          <p class="subtitle">Access control, encryption monitoring, and guest management</p>
+        </div>
       </div>
 
-      <div class="pulse-layout">
-        <!-- Live Scriber -->
-        <div class="pulse-scriber glass-panel">
-          <div class="scriber-header"><span class="live-dot"></span> Live Meeting Scribe</div>
-          <div class="scriber-feed" id="scriber-feed">
-            <div class="scribe-entry chit-chat"><span class="scribe-speaker">Sarah:</span> Hey everyone, how was the weekend?</div>
-            <div class="scribe-entry chit-chat"><span class="scribe-speaker">Abhishek:</span> Great! Went hiking. Alright, let's get started.</div>
-            <div class="scribe-entry decision"><span class="scribe-speaker tag-decision">📌 Decision:</span> We will move forward with PostgreSQL migration this sprint.</div>
-            <div class="scribe-entry"><span class="scribe-speaker">Priya:</span> The API v2 docs are 80% done. I need the auth endpoints spec from Abhishek.</div>
-            <div class="scribe-entry action"><span class="scribe-speaker tag-action">✅ Action:</span> Abhishek to send auth endpoint specs to Priya by EOD Wednesday.</div>
-            <div class="scribe-entry"><span class="scribe-speaker">Mike:</span> I'm blocked on the onboarding designs. Need the brand guidelines from marketing.</div>
-            <div class="scribe-entry blocker"><span class="scribe-speaker tag-blocker">🚫 Blocker:</span> Mike R. is blocked — waiting for brand guidelines from marketing team.</div>
-            <div class="scribe-entry"><span class="scribe-speaker">James:</span> Client permissions flow is almost done. Will push to staging tonight.</div>
-            <div class="scribe-entry action"><span class="scribe-speaker tag-action">✅ Action:</span> James D. to deploy permissions flow to staging by end of today.</div>
+      <!-- Access Request Approval Panel -->
+      <div class="section-title"><h2>🚪 Access Requests</h2></div>
+      <div class="access-requests" id="access-requests">
+        <div class="access-card glass-panel" data-request="req1">
+          <div class="access-user">
+            <div class="avatar-ring guest"><div class="avatar-placeholder">TW</div></div>
+            <div class="access-info">
+              <span class="access-name">Taylor W. <span class="role-badge role-guest mini">🛡 GUEST</span></span>
+              <span class="access-detail">Requesting access to <strong>#engineering</strong></span>
+              <span class="access-time">2 minutes ago</span>
+            </div>
+          </div>
+          <div class="access-actions">
+            <button class="btn btn-sm btn-approve" data-action="approve">✓ Approve</button>
+            <button class="btn btn-sm btn-deny" data-action="deny">✗ Deny</button>
           </div>
         </div>
-
-        <!-- Highlights Panel -->
-        <div class="pulse-highlights">
-          <div class="highlight-card glass-panel decision-card">
-            <div class="highlight-header"><span class="hl-icon">📌</span><h3>Decision Points</h3></div>
-            <ul>
-              <li>Move forward with PostgreSQL migration this sprint</li>
-              <li>Use new authentication flow for external partners</li>
-              <li>Postpone mobile redesign to Q3</li>
-            </ul>
+        <div class="access-card glass-panel" data-request="req2">
+          <div class="access-user">
+            <div class="avatar-ring guest"><div class="avatar-placeholder">LS</div></div>
+            <div class="access-info">
+              <span class="access-name">Lisa S. <span class="role-badge role-guest mini">🛡 GUEST</span></span>
+              <span class="access-detail">Requesting access to <strong>#design</strong></span>
+              <span class="access-time">15 minutes ago</span>
+            </div>
           </div>
-          <div class="highlight-card glass-panel action-card">
-            <div class="highlight-header"><span class="hl-icon">✅</span><h3>Action Items</h3></div>
-            <ul>
-              <li><strong>Abhishek</strong> — Send auth endpoint specs to Priya by Wed</li>
-              <li><strong>James D.</strong> — Deploy permissions flow to staging today</li>
-              <li><strong>Sarah K.</strong> — Review security headers PR by Thu</li>
-            </ul>
-          </div>
-          <div class="highlight-card glass-panel blocker-card">
-            <div class="highlight-header"><span class="hl-icon">🚫</span><h3>Blockers</h3></div>
-            <ul>
-              <li><strong>Mike R.</strong> — Waiting for brand guidelines from marketing</li>
-              <li><strong>Priya L.</strong> — Needs auth endpoint specs from Abhishek</li>
-            </ul>
-          </div>
-          <div class="highlight-card glass-panel recall-card">
-            <div class="highlight-header"><span class="hl-icon">🧠</span><h3>Contextual Recall</h3></div>
-            <ul>
-              <li>"Last meeting, Abhishek agreed to complete API docs by May 2"</li>
-              <li>"Team decided to use JWT tokens for external auth on Apr 25"</li>
-            </ul>
+          <div class="access-actions">
+            <button class="btn btn-sm btn-approve" data-action="approve">✓ Approve</button>
+            <button class="btn btn-sm btn-deny" data-action="deny">✗ Deny</button>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- ===== SETTINGS VIEW ===== -->
-    <section id="view-settings" class="view">
-      <div class="view-header">
-        <h1>Settings & Security</h1>
-        <p class="subtitle">Manage identity tags, encryption, and integrations</p>
+      <div class="no-requests" id="no-requests" style="display:none;">
+        <div class="glass-panel" style="padding:2rem;text-align:center;color:var(--text-secondary);">✅ No pending access requests</div>
       </div>
 
+      <!-- Security Status Grid -->
+      <div class="section-title"><h2>📊 Security Status Dashboard</h2></div>
       <div class="settings-grid">
-        <!-- Tag Management -->
         <div class="settings-section glass-panel">
-          <h3>🏷️ Identity Tags</h3>
-          <p>Manage participant access levels and visual tags.</p>
-          <div class="tag-list">
-            <div class="tag-row"><div class="avatar-ring blue"><div class="avatar-placeholder sm">AB</div></div><span>Abhishek</span><span class="tag-badge tag-blue-sm">CORE TEAM</span><button class="btn btn-sm btn-outline">Edit</button></div>
-            <div class="tag-row"><div class="avatar-ring blue"><div class="avatar-placeholder sm">SK</div></div><span>Sarah K.</span><span class="tag-badge tag-blue-sm">CORE TEAM</span><button class="btn btn-sm btn-outline">Edit</button></div>
-            <div class="tag-row"><div class="avatar-ring amber"><div class="avatar-placeholder sm">MR</div></div><span>Mike R.</span><span class="tag-badge tag-amber-sm">GUEST</span><button class="btn btn-sm btn-outline">Edit</button></div>
-            <div class="tag-row"><div class="avatar-ring blue"><div class="avatar-placeholder sm">PL</div></div><span>Priya L.</span><span class="tag-badge tag-blue-sm">CORE TEAM</span><button class="btn btn-sm btn-outline">Edit</button></div>
-            <div class="tag-row"><div class="avatar-ring amber"><div class="avatar-placeholder sm">JD</div></div><span>James D.</span><span class="tag-badge tag-amber-sm">GUEST</span><button class="btn btn-sm btn-outline">Edit</button></div>
-            <div class="tag-row"><div class="avatar-ring blue"><div class="avatar-placeholder sm">RN</div></div><span>Riya N.</span><span class="tag-badge tag-blue-sm">CORE TEAM</span><button class="btn btn-sm btn-outline">Edit</button></div>
-          </div>
-        </div>
-
-        <!-- Encryption Status -->
-        <div class="settings-section glass-panel">
-          <h3>🔒 Encryption Status</h3>
-          <p>End-to-end encryption for tasks and meeting data.</p>
+          <h3>🔐 Encryption Status</h3>
+          <p>End-to-end encryption for all data channels.</p>
           <div class="encryption-status">
             <div class="enc-row"><span>Task Data</span><span class="enc-badge active">🟢 Active — AES-256</span></div>
             <div class="enc-row"><span>Meeting Audio</span><span class="enc-badge active">🟢 Active — E2EE</span></div>
             <div class="enc-row"><span>Screen Sharing</span><span class="enc-badge active">🟢 Active — TLS 1.3</span></div>
             <div class="enc-row"><span>File Transfers</span><span class="enc-badge active">🟢 Active — AES-256</span></div>
+            <div class="enc-row"><span>Messages</span><span class="enc-badge active">🟢 Active — E2EE</span></div>
           </div>
         </div>
 
-        <!-- Proximity Alert -->
         <div class="settings-section glass-panel">
-          <h3>📍 Proximity-Based Access</h3>
-          <p>Unrecognized devices are placed in Visual-Only mode until verified.</p>
-          <div class="toggle-row"><span>Enable proximity checks</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
-          <div class="toggle-row"><span>Auto-restrict screenshots</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
-          <div class="toggle-row"><span>Require host verification</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+          <h3>🔑 2FA Enforcement</h3>
+          <p>Two-factor authentication status per member.</p>
+          <div class="tfa-list">
+            <div class="tfa-row"><div class="avatar-ring admin sm"><div class="avatar-placeholder xs">AB</div></div><span>Abhishek</span><span class="role-badge role-admin mini">ADMIN</span><span class="tfa-status enabled">✓ Enabled</span></div>
+            <div class="tfa-row"><div class="avatar-ring lead sm"><div class="avatar-placeholder xs">SK</div></div><span>Sarah K.</span><span class="role-badge role-lead mini">LEAD</span><span class="tfa-status enabled">✓ Enabled</span></div>
+            <div class="tfa-row"><div class="avatar-ring engineer sm"><div class="avatar-placeholder xs">PL</div></div><span>Priya L.</span><span class="role-badge role-engineer mini">ENGINEER</span><span class="tfa-status enabled">✓ Enabled</span></div>
+            <div class="tfa-row"><div class="avatar-ring engineer sm"><div class="avatar-placeholder xs">RN</div></div><span>Riya N.</span><span class="role-badge role-engineer mini">ENGINEER</span><span class="tfa-status enabled">✓ Enabled</span></div>
+            <div class="tfa-row"><div class="avatar-ring guest sm"><div class="avatar-placeholder xs">MR</div></div><span>Mike R.</span><span class="role-badge role-guest mini">🛡 GUEST</span><span class="tfa-status enabled">✓ Enabled</span></div>
+            <div class="tfa-row"><div class="avatar-ring guest sm"><div class="avatar-placeholder xs">JD</div></div><span>James D.</span><span class="role-badge role-guest mini">🛡 GUEST</span><span class="tfa-status pending">⚠ Pending</span></div>
+          </div>
         </div>
 
-        <!-- Integrations -->
         <div class="settings-section glass-panel">
-          <h3>🔌 Integrations</h3>
-          <p>Anti Gravity workflow and cross-platform sync.</p>
-          <div class="toggle-row"><span>Zero-Latency Sync</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
-          <div class="toggle-row"><span>Cross-Platform Portability</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
-          <div class="toggle-row"><span>Breakout Room Intelligence</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
-          <div class="toggle-row"><span>Voice Isolation Engine</span><label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+          <h3>🏖️ Sandbox Status</h3>
+          <p>Guest isolation and access restrictions.</p>
+          <div class="sandbox-status">
+            <div class="toggle-row"><span>Guest environment isolation</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+            <div class="toggle-row"><span>Restrict file downloads</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+            <div class="toggle-row"><span>Auto-restrict screenshots</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+            <div class="toggle-row"><span>Require host verification</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+            <div class="toggle-row"><span>Proximity-based access</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+          </div>
+        </div>
+
+        <div class="settings-section glass-panel">
+          <h3>🏷️ Identity Tags</h3>
+          <p>Role-based access control and badges.</p>
+          <div class="tag-list">
+            <div class="tag-row"><div class="avatar-ring admin sm"><div class="avatar-placeholder xs">AB</div></div><span>Abhishek</span><span class="role-badge role-admin">👑 ADMIN</span></div>
+            <div class="tag-row"><div class="avatar-ring lead sm"><div class="avatar-placeholder xs">SK</div></div><span>Sarah K.</span><span class="role-badge role-lead">⭐ LEAD</span></div>
+            <div class="tag-row"><div class="avatar-ring engineer sm"><div class="avatar-placeholder xs">PL</div></div><span>Priya L.</span><span class="role-badge role-engineer">⚙️ ENGINEER</span></div>
+            <div class="tag-row"><div class="avatar-ring engineer sm"><div class="avatar-placeholder xs">RN</div></div><span>Riya N.</span><span class="role-badge role-engineer">⚙️ ENGINEER</span></div>
+            <div class="tag-row"><div class="avatar-ring guest sm"><div class="avatar-placeholder xs">MR</div></div><span>Mike R.</span><span class="role-badge role-guest">🛡 GUEST</span></div>
+            <div class="tag-row"><div class="avatar-ring guest sm"><div class="avatar-placeholder xs">JD</div></div><span>James D.</span><span class="role-badge role-guest">🛡 GUEST</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -435,10 +787,14 @@
         <div class="form-group"><label>Priority</label><select id="task-priority"><option value="high">🔴 High</option><option value="medium" selected>🟡 Medium</option><option value="low">🟢 Low</option></select></div>
         <div class="form-group"><label>Assign</label><select id="task-assign"><option>Abhishek</option><option>Sarah K.</option><option>Mike R.</option><option>Priya L.</option><option>James D.</option><option>Riya N.</option></select></div>
       </div>
+      <div class="form-row">
+        <div class="form-group"><label>Tags</label><select id="task-tags" multiple><option value="URGENT">URGENT</option><option value="DESIGN">DESIGN</option><option value="DEV" selected>DEV</option><option value="REVIEW">REVIEW</option></select></div>
+        <div class="form-group"><label>Due Date</label><input type="date" id="task-due" /></div>
+      </div>
       <div class="modal-actions"><button class="btn btn-outline" id="btn-cancel-task">Cancel</button><button class="btn btn-primary" id="btn-save-task">Create Task</button></div>
     </div>
   </div>
 
-  <script type="module" src="/main.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 </html>
